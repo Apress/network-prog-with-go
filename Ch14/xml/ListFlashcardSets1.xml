@@ -1,0 +1,15 @@
+
+
+
+<card>
+  {{range .}}
+  <name>
+    {{.}}
+  </name>
+  <link>
+    http://
+  </link>
+  {{end}}
+</card>
+
+	  

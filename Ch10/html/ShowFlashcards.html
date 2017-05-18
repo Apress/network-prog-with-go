@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>
+      Flashcards for {{.Name}}
+    </title>
+
+    <link type="text/css" rel="stylesheet" 
+          href="/css/CardStylesheet.css">
+    </link>
+
+    <script type="text/javascript" 
+            language="JavaScript1.2" src="/jscript/jquery.js">
+      <!-- empty -->
+    </script>
+
+    <script type="text/javascript" 
+            language="JavaScript1.2" src="/jscript/slideviewer.js">
+      <!-- empty -->
+    </script>
+
+    <script type="text/javascript" 
+            language="JavaScript1.2">
+      cardOrder = {{.CardOrder}};
+      showHalfCard = {{.ShowHalf}};
+    </script>
+  </head>
+  <body onload="showSlides();"> 
+  <!-- <body> -->
+    <h1> 
+      Flashcards for {{.Name}}
+    </h1>
+    <p>
+      {{range .Cards}}
+        <div class="card">
+	  <div class="english">
+	    <div class="vcenter">
+	      {{.English}}
+	    </div>
+	  </div>
+
+          {{with .Dictionary}}
+	    {{range .Entries}}
+	      <div class="pinyin">
+		<div class="vcenter">
+		  {{.Pinyin|pinyin}}
+		</div>
+	      </div>
+	      
+	      <div class="traditional">
+		<div class="vcenter">
+		  {{.Traditional}}
+		</div>
+	      </div>
+	      
+	      <div class="simplified">
+		<div class="vcenter">
+		  {{.Simplified}}
+		</div>
+	      </div>
+
+	      <div class ="translations">
+		<div class="vcenter">
+		{{range .Translations}}
+		  {{.}} <br />
+                {{end}}
+		</div>
+              </div>
+            {{end}}
+	  {{end}}
+        </div>
+      {{end}}
+    </p>
+    <p class ="return">
+      Press &lt;Space&gt; or Tap to continue
+	<br/>	
+      <a href="http:/flashcards.html"> Return to Flash Cards list</a>
+    </p>
+  </body>
+</html>

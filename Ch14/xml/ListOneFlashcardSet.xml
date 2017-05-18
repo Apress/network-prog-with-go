@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cardset xmlns="http://www.w3.org/2005/Atom">
+  {{range .}}
+  <card href="{{.Link}}">
+    <name>
+      {{.Name}}
+    </name>
+  </card>
+  {{end}}
+</cardset>
+
+	  

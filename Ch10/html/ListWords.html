@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>
+      Words for {{.Name}}
+    </title>
+
+  </head>
+  <body> 
+    <h1> 
+      Words for {{.Name}}
+    </h1>
+    <p>
+      <table border="1" class="sortable">
+	<tr>
+	  <th> English </th>
+	  <th> Pinyin </th>
+	  <th> Traditional </th>
+	  <th> Simplified </th>
+	</tr>
+      {{range .Cards}}
+        <div class="card">
+	  <tr>
+	  <div class="english">
+	    <div class="vcenter">
+	      <td>
+		{{.English}}
+	      </td>
+	    </div>
+	  </div>
+
+	  {{with .Dictionary}}
+            {{range .Entries}}
+	      <div class="pinyin">
+		<div class="vcenter">
+		  <td>
+		    {{.Pinyin|pinyin}}
+		  </td>
+		</div>
+	      </div>
+	      
+	      <div class="traditional">
+		<div class="vcenter">
+		  <td>
+		    {{.Traditional}}
+		  </td>
+		</div>
+	      </div>
+	      
+	      <div class="simplified">
+		<div class="vcenter">
+		  <td>
+		    {{.Simplified}}
+		  </td>
+		</div>
+	      </div>
+
+	    {{end}}
+	  {{end}}
+	  </tr>
+        </div>
+      {{end}}
+      </table>
+    </p>
+    <p class ="return">
+      <a href="http:/flashcards.html"> Return to Flash Cards list</a>
+    </p>
+  </body>
+</html>

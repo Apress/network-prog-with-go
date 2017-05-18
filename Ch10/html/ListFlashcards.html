@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>
+      Flashcards
+    </title>
+    <link type="text/css" rel="stylesheet" 
+          href="/css/ListFlashcardsStylesheet.css">
+    </link>
+  </head>
+  <body>
+    <h1> 
+      Flashcards
+    </h1>
+    <p>
+
+      <div id="choose">
+	<form method="GET" action="http:flashcardSets">
+	  
+	  <table border="1" id="sets">
+	    <tr>
+	      <th  colspan="2">
+		Flashcard Sets
+	      </th>
+	    </tr>
+	    {{range .}}
+	    <tr>
+	      <td>
+		{{.}}
+	      </td>
+	      <td>
+		<input type="radio" name="flashcardSets" value="{{.}}" />
+	      </td>
+	    </tr>
+	    {{end}}
+	  </table>
+	  
+	  <div id="options">
+	    <table border="1" id="order">
+	      <tr>
+		<th colspan="3">
+		  Card order
+		</th>
+	      </tr>
+	      <tr>
+		<td>
+		  Random <input type="radio" name="order" value="Random" checked="true" />
+		</td>
+ 		<td>
+		  Sequential <input type="radio" name="order" value="Sequential" />
+		</td>
+	      </tr>
+	    </table>
+	    
+	    <table border="1" id="half">
+	      <tr>
+		<th colspan="2">
+		  Half card display
+		</th>
+	      </tr>
+	      <tr>
+		<td>
+		  Random <input type="radio" name="half" value="Random" checked="true" />
+		</td>
+ 		<td>
+		  English <input type="radio" name="half" value="English" />
+		</td>
+ 		<td>
+		  Chinese <input type="radio" name="half" value="Chinese" />
+		</td>
+	      </tr>
+	    </table>
+	  </div>
+	  
+	  <br />
+	  <div id="submit">
+	    <button type="submit" name="submit" value="Show cards in set">
+		Show cards in set
+	    </button>
+	    <button type="submit" name="submit" value="List words in set">
+		List words in set
+	    </button>
+	  </div>
+	</form>
+      </div>
+    </p>
+
+  </body>
+</html>
