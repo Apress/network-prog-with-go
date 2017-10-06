@@ -12,7 +12,7 @@ import (
 func main() {
 
 	service := "0.0.0.0:1200"
-	udpAddr, err := net.ResolveUDPAddr("up4", service)
+	udpAddr, err := net.ResolveUDPAddr("udp4", service)
 	checkError(err)
 
 	conn, err := net.ListenUDP("udp", udpAddr)
