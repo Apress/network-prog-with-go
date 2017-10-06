@@ -15,7 +15,7 @@ func main() {
 	}
 	service := os.Args[1]
 
-	udpAddr, err := net.ResolveUDPAddr(service)
+	udpAddr, err := net.ResolveUDPAddr("udp",service)
 	checkError(err)
 
 	conn, err := net.DialUDP("udp", nil, udpAddr)
