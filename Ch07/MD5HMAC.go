@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	hash := hmac.New(md5.New, []byte("secret"))w
+	hash := hmac.New(md5.New, []byte("secret"))
 	bytes := []byte("hello")
 	hash.Write(bytes)
 	hashValue := hash.Sum(nil)
