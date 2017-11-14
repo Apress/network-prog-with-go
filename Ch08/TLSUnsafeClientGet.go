@@ -39,7 +39,7 @@ func main() {
 		fmt.Println(response.Status)
 		os.Exit(2)
 	}
-	fmt.Println("git a repsonse")
+	fmt.Println("got a repsonse")
 
 	chSet := getCharset(response)
 	fmt.Printf("got charset %s\n", chSet)
