@@ -28,7 +28,8 @@ func main() {
 	client := &http.Client{Transport: transport}
 
 	request, err := http.NewRequest("GET", url.String(), nil)
-
+	checkError(err)
+	
 	urlp, _ := transport.Proxy(request)
 	fmt.Println("Proxy ", urlp)
 	dump, _ := httputil.DumpRequest(request, false)
