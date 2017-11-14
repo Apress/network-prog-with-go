@@ -34,6 +34,7 @@ func main() {
 	client := &http.Client{Transport: transport}
 
 	request, err := http.NewRequest("GET", url.String(), nil)
+	checkError(err)
 
 	request.Header.Add("Proxy-Authorization", basic)
 	dump, _ := httputil.DumpRequest(request, false)
